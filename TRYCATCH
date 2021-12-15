@@ -1,0 +1,8 @@
+DECLARE @Contador INT
+BEGIN TRY
+	SET @Contador = 'Text'
+END TRY
+
+BEGIN CATCH
+	PRINT 'Is not possible to assign this kind of entry to @Contador'
+END CATCH
