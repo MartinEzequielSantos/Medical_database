@@ -1,0 +1,9 @@
+DECLARE @Contador INT = 0
+
+WHILE @Contador <= 10 
+
+BEGIN 
+	Print @Contador
+	SET @Contador = @Contador + 1
+END
+
