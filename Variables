@@ -1,0 +1,13 @@
+DECLARE @IdPaciente INT 
+DECLARE @IdTurno INT
+SET @IdPaciente = 3
+
+IF @IdPaciente = 3
+BEGIN
+	SET @IdTurno =20
+	SELECT * FROM Paciente WHERE IdPaciente = @IdPaciente
+	PRINT @IdTurno
+	IF EXISTS (SELECT * FROM Paciente WHERE IdPaciente = 3)
+		PRINT 'Existe'
+
+END
