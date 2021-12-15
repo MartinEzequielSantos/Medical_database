@@ -1,0 +1,3 @@
+SELECT *, (CASE WHEN EstadoTurno = 0 THEN 'Verde' 
+				WHEN EstadoTurno = 1 THEN 'Rojo'
+				WHEN EstadoTurno = 2 THEN 'Azul' END) AS ColorTurno FROM Turno
