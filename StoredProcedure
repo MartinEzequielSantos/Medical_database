@@ -1,0 +1,27 @@
+CREATE PROC AltaPaciente (
+			@DNI varchar (20),
+			@Nombre varchar (50), 
+			@Apellido varchar (50),
+			@FechaNacimiento varchar (8),
+			@Domicilio varchar (50),
+			@IdPaís char (3),
+			@Teléfono varchar (20) = '',
+			@Email varchar (30),
+			@Observación varchar (1000) = '')
+AS
+
+IF NOT EXISTS (SELECT * FROM Paciente WHERE DNI = @DNI)
+
+BEGIN 
+	INSERT INTO Paciente (DNI, Nombre,Apellido,[Fecha de nacimiento], Domicilio,IdPaís,Teléfono, [E-mail], Observación)
+	VALUES (@DNI, @Nombre, @Apellido, @FechaNacimiento,@Domicilio, @IdPaís, @Teléfono, @Email, @Observación)
+	PRINT 'El paciente se agregó correctamente'
+	RETURN
+END
+
+ELSE
+
+BEGIN
+	PRINT 'El paciente ya existe'
+	RETURN
+END
